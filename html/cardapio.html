@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio - 404Pizzaria</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header><h1>Nosso Cardápio</h1></header>
+  <main>
+    <div id="produtos" class="cardapio-grid">
+    </div>
+    <aside id="carrinho" class="carrinho-lateral">
+      <h2>Carrinho</h2>
+      <ul id="lista-carrinho"></ul>
+      <p>Total: R$ <span id="total">0.00</span></p>
+      <button onclick="finalizarPedido()">Finalizar Pedido</button>
+    </aside>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

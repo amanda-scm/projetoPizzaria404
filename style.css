@@ -1,0 +1,154 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+  }
+  
+  header {
+    background-color: #cc0000;
+    color: white;
+    padding: 0.3rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  nav a {
+    margin: 0 0.6rem;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .busca {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .busca input {
+    width: 60%;
+    max-width: 300px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+  }
+  
+  .cart-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .cardapio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .cardapio-grid .item {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    flex: 1 1 calc(50% - 1rem);
+    box-sizing: border-box;
+  }
+  
+  .carrinho-lateral {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background: #eee;
+    padding: 1rem;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slider {
+    display: flex;
+    justify-content: center;
+    padding: 0 5vw;
+    max-width: 2640px;
+    margin: 30px auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .quadro-imagens {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 3px solid #d62828;
+  }
+  
+  .quadro-imagens img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+  
+  .quadro-imagens img.ativo {
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .quadro-imagens {
+      height: 180px;
+    }
+  
+    .cardapio-grid .item {
+      flex: 1 1 100%;
+    }
+  }
+  .destaques-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 5vw;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+  
+  .quadro-fixo {
+    flex: 1 1 400px;
+    height: 250px;
+    border-radius: 12px;
+    border: 3px solid #d62828;
+    padding: 1rem;
+    background-color: #fff5f5;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .quadro-fixo h3 {
+    margin-bottom: 0.5rem;
+    color: #d62828;
+  }
+  
+  @media (max-width: 768px) {
+    .quadro-fixo {
+      flex: 1 1 100%;
+      height: 180px;
+    }
+  }

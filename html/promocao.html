@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promoções - 404Pizzaria</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/promocao.css">
+</head>
+<body>
+  <header>
+    <h1>404Pizzaria</h1>
+    <nav>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="login.html">Login</a>
+      <a href="promocao.html" class="ativo">Promoção</a>
+      <a href="contato.html">Contato</a>
+      <form class="busca" onsubmit="buscarProduto(event)">
+        <input type="text" id="campoBusca" placeholder="Buscar ..." />
+      </form>
+      <button class="cart-btn" onclick="toggleCarrinho()">🛒</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="promocoes">
+      <h2>Promoções Especiais</h2>
+
+      <div class="promocao-card">
+        <h3>Promoção da Semana</h3>
+        <p>Pizza Calabresa com 20% de desconto!</p>
+        <p><strong>R$ 34,00</strong> até 20/07/2025</p>
+      </div>
+
+      <div class="promocao-card">
+        <h3>Sabor Especial</h3>
+        <p>Frango com Catupiry pela metade do preço!</p>
+        <p><strong>R$ 22,00</strong> até 18/07/2025</p>
+      </div>
+
+      <!-- Você pode carregar essas promoções com PHP + MySQL depois -->
+    </section>
+  </main>
+
+  <script src="../js/promocao.js"></script>
+</body>
+</html>

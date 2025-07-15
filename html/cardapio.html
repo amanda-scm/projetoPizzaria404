@@ -9,12 +9,24 @@
   <link rel="stylesheet" href="../css/carrinho.css">
 </head>
 <body>
-  <header>
-    <h1>Monte sua Pizza</h1>
-  </header>
+    <header>
+      <h1>404Pizzaria</h1>
+      <nav> 
+        <a href="cardapio.html">Cardápio</a>
+        <a href="login.html">Login</a>
+        <a href="promocao.html">Promoção</a>
+        <a href="contato.html">Contato</a>
+        <form class="busca" onsubmit="buscarProduto(event)">
+          <input type="text" id="campoBusca" placeholder="Buscar ..." />
+        </form>
+      
+        <button class="cart-btn" onclick="toggleCarrinho()">🛒</button>
+      </nav>
+    </header>
   <main>
+    <h1>Monte sua Pizza</h1>
     <section class="sabores">
-      <h2>Escolha 2 Sabores</h2>
+      <h3>Escolha 2 Sabores</h3>
       <form id="form-sabores" onsubmit="adicionarPizzaPersonalizada(event)">
         <div id="lista-sabores">
           <!-- sabores gerados via JS -->

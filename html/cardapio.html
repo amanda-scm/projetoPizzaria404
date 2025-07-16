@@ -27,20 +27,21 @@
     <h1>Monte sua Pizza</h1>
     <section class="sabores">
       <h3>Escolha 2 Sabores</h3>
-      <form id="form-sabores" onsubmit="adicionarPizzaPersonalizada(event)">
+      <div id="form-sabores" >
         <div id="lista-sabores">
           <!-- sabores gerados via JS -->
           <div id="produtos" class="cardapio-grid"></div>
         </div>
-        <button type="submit">Adicionar ao carrinho</button>
-      </form>
+      </div>
     </section>
 
+    <div id="overlay" style="display:none;"></div>
     <aside id="carrinho" class="carrinho-lateral">
-      <h2>Carrinho</h2>
+      <button id="fechar-carrinho" style="float:left;font-size:1.2em;margin-right:8px;">&times;</button>
+      <h2 style="display:inline;">Carrinho</h2>
       <ul id="lista-carrinho"></ul>
       <p>Total: R$ <span id="total">0.00</span></p>
-      <button onclick="finalizarPedido()">Finalizar Pedido</button>
+      <button class="botao-finalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
     </aside>
   </main>
 

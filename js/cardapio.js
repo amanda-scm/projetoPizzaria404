@@ -75,34 +75,37 @@ const pizzas = [
     atualizarCarrinho();
   }
   
-  function atualizarCarrinho() {
-    listaCarrinho.innerHTML = '';
-  
-    let total = 0;
-  
-    if (carrinho.length === 0) {
-      document.getElementById('carrinho').style.display = 'none';
-    } else {
-      document.getElementById('carrinho').style.display = 'block';
-    }
-  
-    carrinho.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = `${item.nome} (${item.tamanho}) - ${item.quantidade}x - R$ ${(item.preco * item.quantidade).toFixed(2)}`;
-  
-      const btnRemover = document.createElement('button');
-      btnRemover.textContent = 'X';
-      btnRemover.style.marginLeft = '10px';
-      btnRemover.onclick = () => removerDoCarrinho(item.codigo);
-  
-      li.appendChild(btnRemover);
-      listaCarrinho.appendChild(li);
-  
-      total += item.preco * item.quantidade;
-    });
-  
-    totalSpan.textContent = total.toFixed(2);
+function atualizarCarrinho() {
+  listaCarrinho.innerHTML = '';
+
+  let total = 0;
+  const overlay = document.getElementById('overlay');
+  const carrinhoElement = document.getElementById('carrinho');
+  if (carrinho.length === 0) {
+    carrinhoElement.style.display = 'none';
+    overlay.style.display = 'none';
+  } else {
+    carrinhoElement.style.display = 'block';
+    overlay.style.display = 'block';
   }
+
+  carrinho.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.nome} (${item.tamanho}) - ${item.quantidade}x - R$ ${(item.preco * item.quantidade).toFixed(2)}`;
+
+    const btnRemover = document.createElement('button');
+    btnRemover.textContent = 'X';
+    btnRemover.style.marginLeft = '10px';
+    btnRemover.onclick = () => removerDoCarrinho(item.codigo);
+
+    li.appendChild(btnRemover);
+    listaCarrinho.appendChild(li);
+
+    total += item.preco * item.quantidade;
+  });
+
+  totalSpan.textContent = total.toFixed(2);
+}
   
   function finalizarPedido() {
     if (carrinho.length === 0) {
@@ -114,8 +117,38 @@ const pizzas = [
     carrinho = [];
     atualizarCarrinho();
   }
+
+function toggleCarrinho() {
+  const carrinhoElement = document.getElementById('carrinho');
+  const overlay = document.getElementById('overlay');
+  if (carrinhoElement.style.display === 'none' || carrinhoElement.style.display === '') {
+    carrinhoElement.style.display = 'block';
+    overlay.style.display = 'block';
+  } else {
+    carrinhoElement.style.display = 'none';
+    overlay.style.display = 'none';
+  }
+}
   
   window.onload = () => {
     renderizarCardapio();
     atualizarCarrinho();
+  
+  // Botão de fechar carrinho
+  const btnFechar = document.getElementById('fechar-carrinho');
+  if (btnFechar) {
+    btnFechar.onclick = () => {
+      document.getElementById('carrinho').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    };
+  }
+  
+  // Fechar carrinho ao clicar no overlay
+  const overlay = document.getElementById('overlay');
+  if (overlay) {
+    overlay.onclick = () => {
+      document.getElementById('carrinho').style.display = 'none';
+      overlay.style.display = 'none';
+    };
+  }
   };

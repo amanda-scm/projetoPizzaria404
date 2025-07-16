@@ -1,0 +1,41 @@
+.cardapio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 12px;
+  justify-content: center;
+  padding: 1rem;
+}
+  
+  .pizza-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 220px;
+    background-color: #fff5f5;
+    box-shadow: 0 0 6px rgba(0,0,0,0.05);
+    text-align: center;
+    margin: 0;
+  }
+  
+  .pizza-card h3 {
+    margin-bottom: 0.5rem;
+    color: #cc0000;
+  }
+  
+  .pizza-card p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .pizza-card button {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .pizza-card button:hover {
+    background-color: #a00000;
+  }
+  

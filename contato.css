@@ -1,0 +1,96 @@
+
+.contato-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .contato-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  
+  .contato-wrapper h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .contato-wrapper p {
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  .contato-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .contato-item {
+    flex: 1 1 200px;
+    text-align: left;
+  }
+  
+  .contato-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+  
+  .contato-item p {
+    line-height: 1.6;
+  }
+  
+  .contato-form {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contato-form input,
+  .contato-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .contato-form button {
+    padding: 12px;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  
+  .contato-form button:hover {
+    background-color: #c9302c;
+  }
+  
+
+  /* Fundo geral do site */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('../ren.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* fundo fixo enquanto rola a página */
+}
+
+/* Para contraste do conteúdo com o fundo */
+.contato-section {
+  background-color: rgba(255, 255, 255, 0.85); /* fundo branco semi-transparente */
+  padding: 40px;
+  margin: 50px auto;
+  max-width: 800px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}

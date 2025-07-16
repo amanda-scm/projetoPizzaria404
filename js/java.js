@@ -68,3 +68,34 @@ function proximoSlide() {
 // Começa o carrossel automático
 mostrarSlide(slideAtual);
 setInterval(proximoSlide, 3000); // troca a cada 3 segundos
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const botoes = document.querySelectorAll('.botoes-categorias button');
+  const sabores = document.querySelectorAll('.sabor-card');
+
+  botoes.forEach(botao => {
+    botao.addEventListener('click', () => {
+      const categoria = botao.dataset.categoria;
+
+      sabores.forEach(card => {
+        card.style.display = card.classList.contains(categoria) ? 'flex' : 'none';
+      });
+
+      // Opcional: indicar o botão ativo
+      botoes.forEach(b => b.classList.remove('ativo'));
+      botao.classList.add('ativo');
+    });
+  });
+
+  botoes[0].click();
+});
+
+document.querySelectorAll('.sabor-card').forEach(card => {
+  card.addEventListener('click', () => {
+    // Remove seleção anterior
+    document.querySelectorAll('.sabor-card').forEach(c => c.classList.remove('selecionado'));
+    // Marca o clicado
+    card.classList.add('selecionado');
+  });
+});

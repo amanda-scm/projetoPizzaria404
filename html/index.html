@@ -1,26 +1,27 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>404Pizzaria - Home</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
   <header>
     <h1>404Pizzaria</h1>
-    <nav> 
-      <a href="cardapio.html">Cardápio</a>
-      <a href="login.html">Login</a>
-      <a href="promocao.html">Promoção</a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="promocao.html" class="ativo">Promoção</a>
+      <a href="cardapio.html">Delivery</a>
       <a href="contato.html">Contato</a>
+      <a href="login.html">Login</a>
       <form class="busca" onsubmit="buscarProduto(event)">
         <input type="text" id="campoBusca" placeholder="Buscar ..." />
       </form>
-    
       <button class="cart-btn" onclick="toggleCarrinho()">🛒</button>
     </nav>
   </header>
-  
+
   <main>
     <section class="promocoes">
       <h2>Promoções</h2>
@@ -32,22 +33,68 @@
         </div>
       </section>
     </section>
+
     <section class="descricao">
-        <h2>Destaques</h2>
+      <h2>Destaques</h2>
+      <div class="destaques-container">
+        <div class="quadro-fixo">
+          <h3>Entrega Rápida</h3>
+          <p>Receba sua pizza quentinha em até 30 minutos!</p>
+        </div>
+        <div class="quadro-fixo">
+          <h3>Ingredientes Selecionados</h3>
+          <p>Usamos apenas os melhores ingredientes do mercado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cardapio">
+      <h2 class="titulo">CARDÁPIO</h2>
     
-        <div class="destaques-container">
-          <div class="quadro-fixo">
-            <h3>Entrega Rápida</h3>
-            <p>Receba sua pizza quentinha em até 30 minutos!</p>
+      <div class="quadro-fixo3">
+        <div class="botoes-categorias">
+          <button data-categoria="tradicional">Tradicionais</button>
+          <button data-categoria="especial">Especiais</button>
+          <button data-categoria="doce">Doces</button>
+        </div>
+    
+        <div class="lista-sabores">
+          <div class="sabor-card tradicional">
+            <img src="https://via.placeholder.com/70" alt="Calabresa" />
+            <div class="info">
+              <h3>Calabresa</h3>
+              <p>Molho pomodoro, mussarela premium, calabresa e orégano.</p>
+            </div>
           </div>
     
-          <div class="quadro-fixo">
-            <h3>Ingredientes Selecionados</h3>
-            <p>Usamos apenas os melhores ingredientes do mercado.</p>
+          <div class="sabor-card tradicional">
+            <img src="https://via.placeholder.com/70" alt="Portuguesa" />
+            <div class="info">
+              <h3>Portuguesa</h3>
+              <p>Molho pomodoro, mussarela premium, presunto, ovo, tomate, pimentão, cebola, azeitona e orégano.</p>
+            </div>
+          </div>
+    
+          <div class="sabor-card especial">
+            <img src="https://via.placeholder.com/70" alt="Frango especial" />
+            <div class="info">
+              <h3>Frango Especial</h3>
+              <p>Molho pomodoro, mussarela, frango, bacon, cheddar e orégano.</p>
+            </div>
+          </div>
+    
+          <div class="sabor-card doce">
+            <img src="https://via.placeholder.com/70" alt="Chocolate" />
+            <div class="info">
+              <h3>Chocolate</h3>
+              <p>Chocolate ao leite com morango e leite condensado.</p>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
   </main>
-  <script src="js/app.js"></script>
+
+  <script src="../js/java.js"></script>
 </body>
 </html>

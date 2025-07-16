@@ -12,10 +12,11 @@
     <header>
       <h1>404Pizzaria</h1>
       <nav> 
-        <a href="cardapio.html">Cardápio</a>
-        <a href="login.html">Login</a>
-        <a href="promocao.html">Promoção</a>
+        <a href="index.html">Início</a>
+        <a href="promocao.html" class="ativo">Promoção</a>
+        <a href="cardapio.html">Delivery</a>
         <a href="contato.html">Contato</a>
+        <a href="login.html">Login</a>
         <form class="busca" onsubmit="buscarProduto(event)">
           <input type="text" id="campoBusca" placeholder="Buscar ..." />
         </form>
@@ -24,23 +25,23 @@
       </nav>
     </header>
   <main>
-    <h1>Monte sua Pizza</h1>
+    <h1>Escolha sua Pizza</h1>
     <section class="sabores">
-      <h3>Escolha 2 Sabores</h3>
-      <form id="form-sabores" onsubmit="adicionarPizzaPersonalizada(event)">
+      <div id="form-sabores" >
         <div id="lista-sabores">
           <!-- sabores gerados via JS -->
           <div id="produtos" class="cardapio-grid"></div>
         </div>
-        <button type="submit">Adicionar ao carrinho</button>
-      </form>
+      </div>
     </section>
 
+    <div id="overlay" style="display:none;"></div>
     <aside id="carrinho" class="carrinho-lateral">
-      <h2>Carrinho</h2>
+      <button id="fechar-carrinho" style="float:left;font-size:1.2em;margin-right:8px;">&times;</button>
+      <h2 style="display:inline;">Carrinho</h2>
       <ul id="lista-carrinho"></ul>
       <p>Total: R$ <span id="total">0.00</span></p>
-      <button onclick="finalizarPedido()">Finalizar Pedido</button>
+      <button class="botao-finalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
     </aside>
   </main>
 

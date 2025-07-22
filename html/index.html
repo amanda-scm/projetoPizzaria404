@@ -5,22 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>404Pizzaria - Home</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/carrinho.css">
 </head>
 <body>
+  <div id="overlay" style="display:none;"></div>
+
+  <aside id="carrinho" class="carrinho-lateral" style="display: none;">
+    <button id="fechar-carrinho" style="float:left;font-size:1.2em;margin-right:8px;">&times;</button>
+    <h2 style="display:inline;">Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+    <p>Total: R$ <span id="total">0.00</span></p>
+    <button class="botao-finalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
+  </aside>
   <header>
     <h1>404Pizzaria</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="promocao.html" class="ativo">Promoção</a>
-      <a href="cardapio.html">Delivery</a>
-      <a href="contato.html">Contato</a>
-      <a href="login.html">Login</a>
-      <form class="busca" onsubmit="buscarProduto(event)">
-        <input type="text" id="campoBusca" placeholder="Buscar ..." />
-      </form>
-      <button class="cart-btn" onclick="toggleCarrinho()">🛒</button>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="promocao.html" class="ativo">Promoção</a>
+    <a href="delivery.html">Delivery</a>
+    <a href="contato.html">Contato</a>
+    <!-- Links de login/logout -->
+    <a href="login.html" id="link-login">Login</a>
+    <a href="logout.html" id="link-logout" style="display:none;">Sair</a>
+
+    <form class="busca" onsubmit="buscarProduto(event)">
+      <input type="text" id="campoBusca" placeholder="Buscar ..." />
+    </form>
+
+    <button class="cart-btn" onclick="toggleCarrinho()">🛒</button>
+  </nav>
+</header>
 
   <main>
     <section class="promocoes">
@@ -94,7 +108,15 @@
       </div>
     </section>
   </main>
-
+  <script>
+    // Verifica se o usuário está "logado" pelo localStorage (exemplo simples)
+    const usuarioLogado = localStorage.getItem('usuarioLogado');
+  
+    if (usuarioLogado) {
+      document.getElementById('link-login').style.display = 'none';
+      document.getElementById('link-logout').style.display = 'inline';
+    }
+  </script>
   <script src="../js/java.js"></script>
 </body>
 </html>

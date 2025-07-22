@@ -1,12 +1,19 @@
-let carrinho = [];
+// Carrega o carrinho salvo ou começa vazio
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+// Salva no localStorage
+function salvarCarrinho() {
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+}
 
 function adicionarAoCarrinho(produto) {
   const existente = carrinho.find(p => p.id === produto.id);
   if (existente) {
     existente.quantidade++;
   } else {
-    carrinho.push({...produto, quantidade: 1});
+    carrinho.push({ ...produto, quantidade: 1 });
   }
+  salvarCarrinho();
   atualizarCarrinho();
 }
 
@@ -14,39 +21,58 @@ function atualizarCarrinho() {
   const lista = document.getElementById('lista-carrinho');
   const totalSpan = document.getElementById('total');
   if (!lista || !totalSpan) return;
+
   lista.innerHTML = '';
   let total = 0;
+
+  if (carrinho.length === 0) {
+    const li = document.createElement('li');
+    li.textContent = 'Carrinho vazio';
+    lista.appendChild(li);
+    totalSpan.textContent = '0.00';
+    return;
+  }
+
   carrinho.forEach(item => {
     const li = document.createElement('li');
     li.textContent = `${item.nome} x${item.quantidade} - R$${(item.preco * item.quantidade).toFixed(2)}`;
     lista.appendChild(li);
     total += item.preco * item.quantidade;
   });
+
   totalSpan.textContent = total.toFixed(2);
 }
 
+function toggleCarrinho() {
+  const carrinhoElement = document.getElementById('carrinho');
+  const overlay = document.getElementById('overlay');
+
+  if (!carrinhoElement || !overlay) return;
+
+  const visivel = carrinhoElement.style.display === 'block';
+  if (visivel) {
+    carrinhoElement.style.display = 'none';
+    overlay.style.display = 'none';
+  } else {
+    atualizarCarrinho(); // mostra "Carrinho vazio" se necessário
+    carrinhoElement.style.display = 'block';
+    overlay.style.display = 'block';
+  }
+}
+
 function finalizarPedido() {
-  alert("Pedido finalizado! Em breve será entregue.");
+  if (carrinho.length === 0) {
+    alert("Carrinho vazio!");
+    return;
+  }
+
+  alert("Pedido finalizado (simulação).");
   carrinho = [];
+  salvarCarrinho();
   atualizarCarrinho();
 }
 
-// Exemplo de produtos (substituir com dados do backend futuramente)
-document.addEventListener('DOMContentLoaded', () => {
-  const produtos = [
-    { id: 1, nome: 'Pizza Calabresa', preco: 35.00 },
-    { id: 2, nome: 'Pizza 4 Queijos', preco: 38.00 }
-  ];
-  const container = document.getElementById('produtos');
-  if (container) {
-    produtos.forEach(prod => {
-      const div = document.createElement('div');
-      div.innerHTML = `<h3>${prod.nome}</h3><p>R$ ${prod.preco.toFixed(2)}</p><button onclick='adicionarAoCarrinho(${JSON.stringify(prod)})'>Adicionar</button>`;
-      container.appendChild(div);
-    });
-  }
-});
-
+// Carrossel de slides
 let slideAtual = 0;
 
 function mostrarSlide(index) {
@@ -65,37 +91,44 @@ function proximoSlide() {
   mostrarSlide(slideAtual);
 }
 
-// Começa o carrossel automático
-mostrarSlide(slideAtual);
-setInterval(proximoSlide, 3000); // troca a cada 3 segundos
-
-
+// Categoria de sabores
 document.addEventListener('DOMContentLoaded', () => {
+  mostrarSlide(slideAtual);
+  setInterval(proximoSlide, 3000);
+
   const botoes = document.querySelectorAll('.botoes-categorias button');
   const sabores = document.querySelectorAll('.sabor-card');
 
   botoes.forEach(botao => {
     botao.addEventListener('click', () => {
       const categoria = botao.dataset.categoria;
-
       sabores.forEach(card => {
         card.style.display = card.classList.contains(categoria) ? 'flex' : 'none';
       });
-
-      // Opcional: indicar o botão ativo
       botoes.forEach(b => b.classList.remove('ativo'));
       botao.classList.add('ativo');
     });
   });
 
-  botoes[0].click();
-});
+  botoes[0]?.click();
 
-document.querySelectorAll('.sabor-card').forEach(card => {
-  card.addEventListener('click', () => {
-    // Remove seleção anterior
-    document.querySelectorAll('.sabor-card').forEach(c => c.classList.remove('selecionado'));
-    // Marca o clicado
-    card.classList.add('selecionado');
-  });
+  // Fechar carrinho
+  const btnFechar = document.getElementById('fechar-carrinho');
+  if (btnFechar) {
+    btnFechar.onclick = () => {
+      document.getElementById('carrinho').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    };
+  }
+
+  // Overlay fecha o carrinho
+  const overlay = document.getElementById('overlay');
+  if (overlay) {
+    overlay.onclick = () => {
+      document.getElementById('carrinho').style.display = 'none';
+      overlay.style.display = 'none';
+    };
+  }
+
+  atualizarCarrinho(); // sempre que carregar a página
 });

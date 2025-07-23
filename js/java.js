@@ -72,7 +72,7 @@ function finalizarPedido() {
   atualizarCarrinho();
 }
 
-// Carrossel de slides
+// Carrossel de slides 
 let slideAtual = 0;
 
 function mostrarSlide(index) {

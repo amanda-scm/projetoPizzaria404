@@ -14,6 +14,17 @@ header {
   justify-content: space-between;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 75px; 
+  vertical-align: middle;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -92,26 +103,29 @@ nav a {
 .quadro-imagens {
   position: relative;
   width: 100%;
-  height: 250px;
+  min-height: 200px;
   overflow: hidden;
   border-radius: 12px;
-  border: 3px solid #d62828;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .quadro-imagens img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 100%;
   display: none;
+  object-fit: contain;
 }
 
 .quadro-imagens img.ativo {
   display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .quadro-imagens {
-    height: 180px;
+    min-height: 150px;
   }
 
   .cardapio-grid .item {

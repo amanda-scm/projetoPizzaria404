@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Special Elite', cursive;
   margin: 0;
   padding: 0;
   background-color: #fff;
@@ -21,7 +21,7 @@ header {
 }
 
 .logo {
-  height: 75px; 
+  height: 75px;
   vertical-align: middle;
 }
 
@@ -99,7 +99,7 @@ nav a {
   width: 100%;
   box-sizing: border-box;
 }
-  
+
 .quadro-imagens {
   position: relative;
   width: 100%;
@@ -132,13 +132,13 @@ nav a {
     flex: 1 1 100%;
   }
 }
+
 .destaques-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0 5vw;
-  margin-bottom: 2rem;
+  gap: 20px;
   justify-content: center;
+  padding: 1rem 0;
 }
 
 .dc {
@@ -150,40 +150,32 @@ nav a {
   justify-content: center;
 }
 
+.container-padrao {
+  padding: 0 5vw;
+  max-width: 2640px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
 .quadro-fixo {
   flex: 1 1 400px;
   height: 250px;
   border-radius: 12px;
-  border: 3px solid #bbbbbb;
-  padding: 1rem;
+  overflow: hidden;
+  border: 0px #bbbbbb;
   background-color: #bbbbbb;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  text-align: center;
-}
-
-.quadro-fixo h3 {
-  margin-bottom: 0.5rem;
-  color: #000000;
-}
-
-.quadro-fixo3 {
-  width: 100%;
-  max-width: 2000px;
-  height: 750px;
-  border-radius: 12px;
-  border: 1px solid #000;
-  padding: 1rem;
-  background-color: #fdfdfd;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
-  overflow: hidden;
+  padding: 0;
+}
+
+.icone-quadro {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .botoes-categorias {
@@ -206,21 +198,18 @@ nav a {
 /* Card das pizzas */
 .sabor-card {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
+  background-color: #fefefe;
+  border-radius: 20px;
   padding: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  align-items: center;
+  transition: transform 0.2s ease;
   cursor: pointer;
 }
 
 .sabor-card:hover {
   background-color: #f0f0f0;
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .sabor-card.selecionado {
@@ -229,150 +218,195 @@ nav a {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-@media (max-width: 768px) {
-  .quadro-fixo {
-    flex: 1 1 100%;
-    height: 180px;
-  }
-}
-  
-  @media (max-width: 768px) {
-    .quadro-fixo {
-      flex: 1 1 100%;
-      height: 180px;
-    }
-  }
-  .login-container {
-    max-width: 400px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .login-container h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #cc0000;
-  }
-  
-  .login-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .login-container input {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .login-container button {
-    padding: 0.75rem;
-    background-color: #cc0000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .login-container button:hover {
-    background-color: #a00000;
-  }
-  
-  .login-container p {
-    text-align: center;
-    margin-top: 1rem;
-  }
-  
-  .login-container a {
-    color: #cc0000;
-    text-decoration: none;
-  }
-  
-  .login-container a:hover {
-    text-decoration: underline;
-  }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  
-  .cardapio {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-  
-  .titulo {
-    text-align: center;
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-family: 'Impact', sans-serif;
-  }
-  
-  .botoes-categorias {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .botoes-categorias button {
-    background-color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .botoes-categorias button:hover {
-    background-color: #ddd;
-  }
-  
-  .lista-sabores {
-    display: flex;
+.sabor-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 1rem;
+  border: 2px solid #eee;
+}
+
+.sabor-card .info h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.sabor-card .info p {
+  margin: 0.3rem 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Container principal do cardápio */
+.cardapio-flex {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 900px;
+  margin: 5rem auto; 
+  padding: 2rem 1rem;
+}
+
+.sabores-coluna {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lista-sabores {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 600px;
+}
+
+.imagem-pizza {
+  flex: 1;
+  max-width: 600px;
+  position: sticky;
+  top: 150px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.imagem-pizza img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Responsividade para celular */
+@media (max-width: 768px) {
+  .cardapio-flex {
     flex-direction: column;
-    gap: 1.2rem;
-  }
-  
-  .sabor-card {
-    display: flex;
-    background-color: white;
-    border-radius: 20px;
-    padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     align-items: center;
   }
-  
-  .sabor-card img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 1rem;
-    border: 2px solid #eee;
+
+  .imagem-pizza {
+    position: static;
+    max-width: 90%;
+    margin-top: 2rem;
   }
-  
-  .sabor-card .info h3 {
-    margin: 0;
-    color: #333;
-    font-size: 1.1rem;
-  }
-  
-  .sabor-card .info p {
-    margin: 0.3rem 0 0;
-    color: #666;
-    font-size: 0.9rem;
-  }
+}
+
+/* Login Container */
+.login-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #cc0000;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-container input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-container button {
+  padding: 0.75rem;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #a00000;
+}
+
+.login-container p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.login-container a {
+  color: #cc0000;
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cardápio container */
+.cardapio {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.titulo {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Impact', sans-serif;
+}
+
+.botoes-categorias {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.botoes-categorias button {
+  background-color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.botoes-categorias button:hover {
+  background-color: #ddd;
+}
+
+.container-cardapio {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.lista-sabores {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+

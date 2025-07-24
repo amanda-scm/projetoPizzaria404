@@ -76,14 +76,16 @@ function finalizarPedido() {
 let slideAtual = 0;
 
 function mostrarSlide(index) {
-  const slides = document.querySelectorAll(".slide");
-  slides.forEach((slide, i) => {
-    slide.classList.remove("ativo");
+  const links = document.querySelectorAll(".quadro-imagens a");
+  links.forEach((link, i) => {
+    const img = link.querySelector("img");
+    img.classList.remove("ativo");
     if (i === index) {
-      slide.classList.add("ativo");
+      img.classList.add("ativo");
     }
   });
 }
+
 
 function proximoSlide() {
   const slides = document.querySelectorAll(".slide");

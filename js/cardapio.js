@@ -1,44 +1,47 @@
 const pizzas = [
-  { codigo: 1, nome: "Margherita", tamanho: "Média", preco: 30.00 },
-  { codigo: 2, nome: "Calabresa", tamanho: "Grande", preco: 42.50 },
-  { codigo: 3, nome: "Quatro Queijos", tamanho: "Pequena", preco: 28.90 },
-  { codigo: 4, nome: "Frango com Catupiry", tamanho: "Grande", preco: 44.00 },
-  { codigo: 5, nome: "Portuguesa", tamanho: "Média", preco: 35.00 },
-  { codigo: 6, nome: "Vegetariana", tamanho: "Pequena", preco: 27.00 },
-  { codigo: 7, nome: "Pepperoni", tamanho: "Grande", preco: 45.50 },
-  { codigo: 8, nome: "Bacon", tamanho: "Média", preco: 38.00 },
-  { codigo: 9, nome: "Napolitana", tamanho: "Pequena", preco: 26.00 },
-  { codigo: 10, nome: "Moda da Casa", tamanho: "Grande", preco: 49.90 },
+  { codigo: 1, nome: "Margherita", tamanho: "Grande", preco: 42.00, categoria: "Tradicional" },
+  { codigo: 2, nome: "Calabresa", tamanho: "Grande", preco: 42.50, categoria: "Tradicional" },
+  { codigo: 3, nome: "Portuguesa", tamanho: "Grande", preco: 45.00, categoria: "Tradicional" },
+  { codigo: 4, nome: "Frango com Catupiry", tamanho: "Grande", preco: 44.00, categoria: "Tradicional" },
+  { codigo: 5, nome: "Frango Especial", tamanho: "Grande", preco: 46.00, categoria: "Especial" },
+  { codigo: 6, nome: "Quatro Queijos", tamanho: "Grande", preco: 43.90, categoria: "Especial" },
+  { codigo: 7, nome: "Pepperoni", tamanho: "Grande", preco: 45.50, categoria: "Especial" },
+  { codigo: 8, nome: "Vegetariana", tamanho: "Grande", preco: 43.00, categoria: "Especial" },
+  { codigo: 9, nome: "Chocolate", tamanho: "Grande", preco: 39.90, categoria: "Doce" },
+  { codigo: 10, nome: "Romeu e Julieta", tamanho: "Grande", preco: 39.00, categoria: "Doce" },
+  { codigo: 11, nome: "Banana com Canela", tamanho: "Grande", preco: 37.90, categoria: "Doce" },
+  { codigo: 12, nome: "Prestígio", tamanho: "Grande", preco: 40.00, categoria: "Doce" },
 ];
 
-const produtosContainer = document.getElementById('produtos');
 const listaCarrinho = document.getElementById('lista-carrinho');
 const totalSpan = document.getElementById('total');
-
 let carrinho = [];
 
 function renderizarCardapio() {
-  produtosContainer.innerHTML = '';
-
   pizzas.forEach(pizza => {
-    const card = document.createElement('div');
-    card.classList.add('pizza-card');
+    const card = document.createElement("div");
+    card.className = "pizza-card";
 
-    card.innerHTML =  `
+    const imagemURL = `imagens/${pizza.nome.toLowerCase().replace(/\s/g, '-')}.jpg`;
+
+    card.innerHTML = `
+      <img src="${imagemURL}" alt="Pizza ${pizza.nome}">
       <h3 class="pizza-nome">${pizza.nome}</h3>
       <p class="pizza-tamanho">${pizza.tamanho}</p>
       <p>Preço: R$ ${pizza.preco.toFixed(2)}</p>
-      <button class="add-btn" onclick="adicionarAoCarrinho(${pizza.codigo})">Adicionar ao carrinho</button>
+      <button onclick="adicionarAoCarrinho(${pizza.codigo})">Adicionar ao carrinho</button>
     `;
-    
-    produtosContainer.appendChild(card);
+
+    const categoriaContainer = document.getElementById(pizza.categoria.toLowerCase());
+    if (categoriaContainer) {
+      categoriaContainer.appendChild(card);
+    }
   });
 }
 
 function buscarPizza(event) {
   event.preventDefault();
   const termo = document.getElementById('campoBusca').value.toLowerCase();
-
   const pizzasCards = document.querySelectorAll('.pizza-card');
 
   pizzasCards.forEach(card => {
@@ -73,10 +76,11 @@ function removerDoCarrinho(codigoPizza) {
 
 function atualizarCarrinho() {
   listaCarrinho.innerHTML = '';
-
   let total = 0;
+
   const overlay = document.getElementById('overlay');
   const carrinhoElement = document.getElementById('carrinho');
+
   if (carrinho.length === 0) {
     carrinhoElement.style.display = 'none';
     overlay.style.display = 'none';
@@ -96,7 +100,6 @@ function atualizarCarrinho() {
 
     li.appendChild(btnRemover);
     listaCarrinho.appendChild(li);
-
     total += item.preco * item.quantidade;
   });
 
@@ -109,17 +112,16 @@ function finalizarPedido() {
     return;
   }
 
-  // Aqui faça o envio para o backend
   alert('Pedido finalizado com sucesso!');
   carrinho = [];
   atualizarCarrinho();
 }
 
-// Evento fechar carrinho
 document.getElementById('fechar-carrinho').onclick = () => {
   document.getElementById('carrinho').style.display = 'none';
   document.getElementById('overlay').style.display = 'none';
 };
+
 document.getElementById('overlay').onclick = () => {
   document.getElementById('carrinho').style.display = 'none';
   document.getElementById('overlay').style.display = 'none';

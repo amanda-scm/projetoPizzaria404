@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/cardapio.css" />
   <link rel="stylesheet" href="../css/carrinho.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="overlay" style="display:none;"></div>
@@ -42,26 +43,48 @@
   </nav>
 </header>
 
-  <main>
-    <h1>Escolha sua Pizza</h1>
-    <section class="sabores">
-      <div id="form-sabores">
-        <div id="lista-sabores">
-          <div id="produtos" class="cardapio-grid"></div>
-        </div>
+<main>
+  <section class="sabores">
+    <div class="categorias-container">
+      <div class="categoria">
+        <h2>Tradicional</h2>
+        <div id="tradicional" class="cardapio-grid"></div>
       </div>
-    </section>
-  </main>
+      <div class="categoria">
+        <h2>Especial</h2>
+        <div id="especial" class="cardapio-grid"></div>
+      </div>
+      <div class="categoria">
+        <h2>Doce</h2>
+        <div id="doce" class="cardapio-grid"></div>
+      </div>
+    </div>
+  </section>
+</main>
 
-  <script src="../js/cardapio.js"></script>
-  <script>
-    // Verifica se o usuário está "logado" pelo localStorage (exemplo simples)
-    const usuarioLogado = localStorage.getItem('usuarioLogado');
-  
-    if (usuarioLogado) {
-      document.getElementById('link-login').style.display = 'none';
-      document.getElementById('link-logout').style.display = 'inline';
+<script src="../js/cardapio.js"></script>
+<script>
+  const usuarioLogado = localStorage.getItem('usuarioLogado');
+  if (usuarioLogado) {
+    document.getElementById('link-login').style.display = 'none';
+    document.getElementById('link-logout').style.display = 'inline';
+  }
+
+  function toggleCarrinho() {
+    const carrinho = document.getElementById("carrinho");
+    const overlay = document.getElementById("overlay");
+    if (carrinho.style.display === "none") {
+      carrinho.style.display = "block";
+      overlay.style.display = "block";
+    } else {
+      carrinho.style.display = "none";
+      overlay.style.display = "none";
     }
-  </script>
+  }
+
+  document.getElementById("fechar-carrinho").addEventListener("click", function () {
+    toggleCarrinho();
+  });
+</script>
 </body>
 </html>

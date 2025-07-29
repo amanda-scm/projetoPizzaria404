@@ -1,13 +1,3 @@
-function toggleCarrinho() {
-    alert("Carrinho será implementado em breve."); // placeholder
-  }
-  
-  // Busca por produto ou promoção
-  function buscarProduto(event) {
-    event.preventDefault();
-    const termo = document.getElementById('campoBusca').value.toLowerCase();
-  
-    // Exemplo simples de filtro de promoções visíveis na página
     const promocoes = document.querySelectorAll('.promocao-card');
   
     let encontrou = false;
@@ -27,4 +17,3 @@ function toggleCarrinho() {
     if (!encontrou) {
       alert("Nenhuma promoção encontrada com esse termo.");
     }
-  }

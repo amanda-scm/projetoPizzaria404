@@ -1,78 +1,3 @@
-// Carrega o carrinho salvo ou começa vazio
-let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-// Salva no localStorage
-function salvarCarrinho() {
-  localStorage.setItem("carrinho", JSON.stringify(carrinho));
-}
-
-function adicionarAoCarrinho(produto) {
-  const existente = carrinho.find(p => p.id === produto.id);
-  if (existente) {
-    existente.quantidade++;
-  } else {
-    carrinho.push({ ...produto, quantidade: 1 });
-  }
-  salvarCarrinho();
-  atualizarCarrinho();
-}
-
-function atualizarCarrinho() {
-  const lista = document.getElementById('lista-carrinho');
-  const totalSpan = document.getElementById('total');
-  if (!lista || !totalSpan) return;
-
-  lista.innerHTML = '';
-  let total = 0;
-
-  if (carrinho.length === 0) {
-    const li = document.createElement('li');
-    li.textContent = 'Carrinho vazio';
-    lista.appendChild(li);
-    totalSpan.textContent = '0.00';
-    return;
-  }
-
-  carrinho.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = `${item.nome} x${item.quantidade} - R$${(item.preco * item.quantidade).toFixed(2)}`;
-    lista.appendChild(li);
-    total += item.preco * item.quantidade;
-  });
-
-  totalSpan.textContent = total.toFixed(2);
-}
-
-function toggleCarrinho() {
-  const carrinhoElement = document.getElementById('carrinho');
-  const overlay = document.getElementById('overlay');
-
-  if (!carrinhoElement || !overlay) return;
-
-  const visivel = carrinhoElement.style.display === 'block';
-  if (visivel) {
-    carrinhoElement.style.display = 'none';
-    overlay.style.display = 'none';
-  } else {
-    atualizarCarrinho(); // mostra "Carrinho vazio" se necessário
-    carrinhoElement.style.display = 'block';
-    overlay.style.display = 'block';
-  }
-}
-
-function finalizarPedido() {
-  if (carrinho.length === 0) {
-    alert("Carrinho vazio!");
-    return;
-  }
-
-  alert("Pedido finalizado (simulação).");
-  carrinho = [];
-  salvarCarrinho();
-  atualizarCarrinho();
-}
-
-// Carrossel de slides 
 let slideAtual = 0;
 
 function mostrarSlide(index) {
@@ -86,14 +11,13 @@ function mostrarSlide(index) {
   });
 }
 
-
 function proximoSlide() {
   const slides = document.querySelectorAll(".slide");
   slideAtual = (slideAtual + 1) % slides.length;
   mostrarSlide(slideAtual);
 }
 
-// Categoria de sabores
+// Categoria de sabores (filtros)
 document.addEventListener('DOMContentLoaded', () => {
   mostrarSlide(slideAtual);
   setInterval(proximoSlide, 3000);
@@ -123,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  // Overlay fecha o carrinho
+
   const overlay = document.getElementById('overlay');
   if (overlay) {
     overlay.onclick = () => {
@@ -131,6 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
       overlay.style.display = 'none';
     };
   }
-
-  atualizarCarrinho(); // sempre que carregar a página
 });
+
+function buscarProduto(event){
+  event.preventDefault();
+  const termo = document.getElementById("campoBusca").value;
+  alert("Buscar por:"+ termo);
+
+}
+function toggleCarrinho(){
+  alert("Abrir carrinho...");
+}

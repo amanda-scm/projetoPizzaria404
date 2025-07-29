@@ -117,14 +117,22 @@ function finalizarPedido() {
   atualizarCarrinho();
 }
 
-document.getElementById('fechar-carrinho').onclick = () => {
-  document.getElementById('carrinho').style.display = 'none';
-  document.getElementById('overlay').style.display = 'none';
-};
+document.addEventListener('DOMContentLoaded', function() {
+  renderizarCardapio();
 
-document.getElementById('overlay').onclick = () => {
-  document.getElementById('carrinho').style.display = 'none';
-  document.getElementById('overlay').style.display = 'none';
-};
+  const btnFechar = document.getElementById('fechar-carrinho');
+  if (btnFechar) {
+    btnFechar.onclick = () => {
+      document.getElementById('carrinho').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    };
+  }
 
-renderizarCardapio();
+  const overlay = document.getElementById('overlay');
+  if (overlay) {
+    overlay.onclick = () => {
+      document.getElementById('carrinho').style.display = 'none';
+      overlay.style.display = 'none';
+    };
+  }
+});

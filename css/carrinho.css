@@ -94,11 +94,14 @@
   font-weight: bold;
   font-size: 1.2rem;
   margin-top: 1.5rem;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
 }
 
 .botao-finalizar {
   margin-top: 1rem;
-  width: 100%;
+  width: 200px;
   padding: 0.75rem;
   background-color: #cc0000;
   border: none;
@@ -107,6 +110,9 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
+  position: fixed;
+  bottom: 20px;
+  right: 60px;
 }
 .botao-finalizar:hover {
   background-color: #a00000;

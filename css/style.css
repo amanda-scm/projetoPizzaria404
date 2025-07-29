@@ -39,6 +39,37 @@ nav a {
   font-size: 0.9rem;
 }
 
+.usuario-logado {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+  color: white; /* combinando com o texto do header */
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.saudacao-usuario {
+  white-space: nowrap; /* para evitar quebra de linha */
+}
+
+.logout-link,
+.login-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-link:hover,
+.login-link:hover {
+  background-color: white;
+  color: #cc0000; /* cor do header invertida */
+}
+
 .busca {
   flex-grow: 1;
   display: flex;

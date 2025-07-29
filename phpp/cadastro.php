@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         echo "<script>
             alert('Cadastro realizado com sucesso!');
-            window.location.href = '../html/index.html';
+            window.location.href = '../html/index.php';
         </script>";
     } else {
         if ($conn->errno === 1062) {

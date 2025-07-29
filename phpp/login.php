@@ -16,9 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($resultado->num_rows === 1) {
         $usuario = $resultado->fetch_assoc();
 
-        // Comparação direta porque as senhas não estão criptografadas
+      
         if ($senha === $usuario['Senha']) {
-            // ✅ Guarda os dados na sessão
+            
             $_SESSION['usuario'] = [
                 'cpf' => $usuario['CPF'],
                 'nome' => $usuario['Nome'],
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             echo "<script>
                 alert('Login realizado com sucesso!');
-                window.location.href = '../html/index.html';
+                window.location.href = '../html/index.php';
             </script>";
             exit;
         } else {

@@ -101,7 +101,7 @@ session_start();
           <div class="lista-sabores">
 
             <div class="sabor-card tradicional">
-              <img src="https://via.placeholder.com/70" alt="Margherita" />
+              <img src="../png/marguerita.jpg" alt="Margherita" />
               <div class="info">
                 <h3>Margherita</h3>
                 <p>Molho pomodoro, mussarela, manjericão fresco.</p>
@@ -109,7 +109,7 @@ session_start();
             </div>
           
             <div class="sabor-card tradicional">
-              <img src="https://via.placeholder.com/70" alt="Calabresa" />
+              <img src="../png/calabresa.jpg" alt="Calabresa" />
               <div class="info">
                 <h3>Calabresa</h3>
                 <p>Molho pomodoro, mussarela premium, calabresa e orégano.</p>
@@ -117,7 +117,7 @@ session_start();
             </div>
           
             <div class="sabor-card tradicional">
-              <img src="https://via.placeholder.com/70" alt="Portuguesa" />
+              <img src="../png/pizzaportuguesa.jpeg" alt="Portuguesa" />
               <div class="info">
                 <h3>Portuguesa</h3>
                 <p>Molho pomodoro, mussarela, presunto, ovo, tomate, pimentão, cebola, azeitona e orégano.</p>
@@ -125,7 +125,7 @@ session_start();
             </div>
           
             <div class="sabor-card tradicional">
-              <img src="https://via.placeholder.com/70" alt="Frango com Catupiry" />
+              <img src="../png/fCatupiry.jpg" alt="Frango com Catupiry" />
               <div class="info">
                 <h3>Frango com Catupiry</h3>
                 <p>Molho pomodoro, mussarela, frango desfiado, catupiry e milho.</p>
@@ -133,7 +133,7 @@ session_start();
             </div>
 
             <div class="sabor-card especial">
-              <img src="https://via.placeholder.com/70" alt="Frango Especial" />
+              <img src="../png/frango.png" alt="Frango Especial" />
               <div class="info">
                 <h3>Frango Especial</h3>
                 <p>Molho pomodoro, mussarela, frango, bacon, cheddar e orégano.</p>
@@ -141,7 +141,7 @@ session_start();
             </div>
           
             <div class="sabor-card especial">
-              <img src="https://via.placeholder.com/70" alt="Quatro Queijos" />
+              <img src="../png/pizza4queijos.jpg" alt="Quatro Queijos" />
               <div class="info">
                 <h3>Quatro Queijos</h3>
                 <p>Mussarela, parmesão, provolone e gorgonzola.</p>
@@ -149,7 +149,7 @@ session_start();
             </div>
           
             <div class="sabor-card especial">
-              <img src="https://via.placeholder.com/70" alt="Pepperoni" />
+              <img src="../png/pizzapepperoni.jpg" alt="Pepperoni" />
               <div class="info">
                 <h3>Pepperoni</h3>
                 <p>Molho pomodoro, mussarela, pepperoni e pimenta calabresa.</p>
@@ -157,7 +157,7 @@ session_start();
             </div>
           
             <div class="sabor-card especial">
-              <img src="https://via.placeholder.com/70" alt="Vegetariana" />
+              <img src="../png/vegetariana.webp" alt="Vegetariana" />
               <div class="info">
                 <h3>Vegetariana</h3>
                 <p>Molho pomodoro, mussarela, tomate, cebola, pimentão, azeitona, brócolis e milho.</p>
@@ -166,7 +166,7 @@ session_start();
           
 
             <div class="sabor-card doce">
-              <img src="https://via.placeholder.com/70" alt="Chocolate" />
+              <img src="../png/pizzachocolatecommorango.jpg" alt="Chocolate com Morango" />
               <div class="info">
                 <h3>Chocolate</h3>
                 <p>Chocolate ao leite com morango e leite condensado.</p>
@@ -174,7 +174,7 @@ session_start();
             </div>
           
             <div class="sabor-card doce">
-              <img src="https://via.placeholder.com/70" alt="Romeu e Julieta" />
+              <img src="../png/pizzaromeuejulieta.jpg" alt="Romeu e Julieta" />
               <div class="info">
                 <h3>Romeu e Julieta</h3>
                 <p>Goiabada cremosa com queijo mussarela.</p>
@@ -182,7 +182,7 @@ session_start();
             </div>
           
             <div class="sabor-card doce">
-              <img src="https://via.placeholder.com/70" alt="Banana com Canela" />
+              <img src="../png/pizzabananacomcanela.webp" alt="Banana com Canela" />
               <div class="info">
                 <h3>Banana com Canela</h3>
                 <p>Banana fatiada, canela e açúcar.</p>
@@ -190,7 +190,7 @@ session_start();
             </div>
           
             <div class="sabor-card doce">
-              <img src="https://via.placeholder.com/70" alt="Prestígio" />
+              <img src="../png/prestigio.jpg" alt="Prestígio" />
               <div class="info">
                 <h3>Prestígio</h3>
                 <p>Chocolate, coco ralado e leite condensado.</p>
@@ -200,7 +200,7 @@ session_start();
           </div>
         </div>
         <div class="imagem-pizza">
-          <img src="../png/logo.png" alt="Pizza Destaque">
+          <img src="../png/pizzadestaque.png" alt="Pizza Destaque">
         </div>
     
       </div>

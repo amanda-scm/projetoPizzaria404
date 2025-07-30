@@ -1,16 +1,16 @@
 const pizzas = [
-  { codigo: 1, nome: "Margherita", tamanho: "Grande", preco: 42.00, categoria: "Tradicional" },
-  { codigo: 2, nome: "Calabresa", tamanho: "Grande", preco: 42.50, categoria: "Tradicional" },
-  { codigo: 3, nome: "Portuguesa", tamanho: "Grande", preco: 45.00, categoria: "Tradicional" },
-  { codigo: 4, nome: "Frango com Catupiry", tamanho: "Grande", preco: 44.00, categoria: "Tradicional" },
-  { codigo: 5, nome: "Frango Especial", tamanho: "Grande", preco: 46.00, categoria: "Especial" },
-  { codigo: 6, nome: "Quatro Queijos", tamanho: "Grande", preco: 43.90, categoria: "Especial" },
-  { codigo: 7, nome: "Pepperoni", tamanho: "Grande", preco: 45.50, categoria: "Especial" },
-  { codigo: 8, nome: "Vegetariana", tamanho: "Grande", preco: 43.00, categoria: "Especial" },
-  { codigo: 9, nome: "Chocolate", tamanho: "Grande", preco: 39.90, categoria: "Doce" },
-  { codigo: 10, nome: "Romeu e Julieta", tamanho: "Grande", preco: 39.00, categoria: "Doce" },
-  { codigo: 11, nome: "Banana com Canela", tamanho: "Grande", preco: 37.90, categoria: "Doce" },
-  { codigo: 12, nome: "Prestígio", tamanho: "Grande", preco: 40.00, categoria: "Doce" },
+  { codigo: 1, nome: "Margherita", tamanho: "Grande", preco: 42.00, categoria: "Tradicional", imagem: "../mpng/1.png" },
+  { codigo: 2, nome: "Calabresa", tamanho: "Grande", preco: 42.50, categoria: "Tradicional", imagem: "../mpng/2.png" },
+  { codigo: 3, nome: "Portuguesa", tamanho: "Grande", preco: 45.00, categoria: "Tradicional", imagem: "../mpng/3.png" },
+  { codigo: 4, nome: "Frango com Catupiry", tamanho: "Grande", preco: 44.00, categoria: "Tradicional", imagem: "../mpng/4.png" },
+  { codigo: 5, nome: "Frango Especial", tamanho: "Grande", preco: 46.00, categoria: "Especial", imagem: "../mpng/5.png" },
+  { codigo: 6, nome: "Quatro Queijos", tamanho: "Grande", preco: 43.90, categoria: "Especial", imagem: "../mpng/6.png" },
+  { codigo: 7, nome: "Pepperoni", tamanho: "Grande", preco: 45.50, categoria: "Especial", imagem: "../mpng/7.png" },
+  { codigo: 8, nome: "Vegetariana", tamanho: "Grande", preco: 43.00, categoria: "Especial", imagem: "../mpng/8.png" },
+  { codigo: 9, nome: "Chocolate", tamanho: "Grande", preco: 39.90, categoria: "Doce", imagem: "../mpng/9.png" },
+  { codigo: 10, nome: "Romeu e Julieta", tamanho: "Grande", preco: 39.00, categoria: "Doce", imagem: "../mpng/10.png" },
+  { codigo: 11, nome: "Banana com Canela", tamanho: "Grande", preco: 37.90, categoria: "Doce", imagem: "../mpng/11.png" },
+  { codigo: 12, nome: "Prestígio", tamanho: "Grande", preco: 40.00, categoria: "Doce", imagem: "../mpng/12.png" }
 ];
 
 const listaCarrinho = document.getElementById('lista-carrinho');
@@ -22,7 +22,7 @@ function renderizarCardapio() {
     const card = document.createElement("div");
     card.className = "pizza-card";
 
-    const imagemURL = `imagens/${pizza.nome.toLowerCase().replace(/\s/g, '-')}.jpg`;
+    const imagemURL = pizza.imagem;
 
     card.innerHTML = `
       <img src="${imagemURL}" alt="Pizza ${pizza.nome}">

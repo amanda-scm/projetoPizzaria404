@@ -66,3 +66,5 @@ function buscarProduto(event){
 function toggleCarrinho(){
   alert("Abrir carrinho...");
 }
+
+

@@ -78,12 +78,7 @@ session_start();
   <script src="../js/java.js"></script>
   <script src="../js/cardapio.js"></script>
   <script>
-    const usuarioLogado = localStorage.getItem('usuarioLogado');
-  
-    if (usuarioLogado) {
-      document.getElementById('link-login').style.display = 'none';
-      document.getElementById('link-logout').style.display = 'inline';
-    }
+    const estaLogado = <?php echo isset($_SESSION['usuario']) ? 'true' : 'false'; ?>;
   </script>
 </body>
 </html>

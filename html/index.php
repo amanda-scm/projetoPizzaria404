@@ -209,13 +209,7 @@ session_start();
   </section>
   </main>
   <script>
-    // Verifica se o usuário está "logado" pelo localStorage (exemplo simples)
-    const usuarioLogado = localStorage.getItem('usuarioLogado');
-  
-    if (usuarioLogado) {
-      document.getElementById('link-login').style.display = 'none';
-      document.getElementById('link-logout').style.display = 'inline';
-    }
+    const estaLogado = <?php echo isset($_SESSION['usuario']) ? 'true' : 'false'; ?>;
   </script>
   <script src="../js/java.js"></script>
   <script src="../js/cardapio.js"></script>

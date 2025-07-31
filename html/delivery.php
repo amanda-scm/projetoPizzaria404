@@ -73,7 +73,9 @@ session_start();
       </div>
     </section>
   </main>
-
+  <script>
+    const estaLogado = <?php echo isset($_SESSION['usuario']) ? 'true' : 'false'; ?>;
+  </script>
   <script src="../js/java.js"></script>
   <script src="../js/cardapio.js"></script>
   

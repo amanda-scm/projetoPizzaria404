@@ -1,6 +1,10 @@
 <?php
 session_start();
 ?>
+<script>
+  const estaLogado = <?php echo isset($_SESSION['usuario']) ? 'true' : 'false'; ?>;
+</script> 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -64,7 +68,9 @@ session_start();
       <button class="botao-finalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
     </aside>
   </main>
-
+  <script>
+    const estaLogado = <?php echo isset($_SESSION['usuario']) ? 'true' : 'false'; ?>;
+  </script>
   <script src="../js/cardapio.js"></script>
 </body>
 </html>

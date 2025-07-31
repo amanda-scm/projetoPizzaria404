@@ -1,7 +1,9 @@
 <?php
 session_start();
-
 ?>
+<script>
+  const estaLogado = <?php echo isset($_SESSION['usuario']) ? 'true' : 'false'; ?>;
+</script>
 
 <!DOCTYPE html>
 <html lang="pt-BR">

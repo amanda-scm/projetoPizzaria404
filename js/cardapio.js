@@ -98,9 +98,19 @@ function atualizarCarrinho() {
   localStorage.setItem('carrinho', JSON.stringify(carrinho));
 }
 
+
+// 
+
+
 function finalizarPedido() {
   if (carrinho.length === 0) {
     alert('Seu carrinho está vazio!');
+    return;
+  }
+
+  if (!estaLogado) {
+    alert('Você precisa estar logado para finalizar o pedido.');
+    window.location.href = 'login.php';
     return;
   }
 
@@ -110,6 +120,9 @@ function finalizarPedido() {
   atualizarCarrinho();
   ocultarCarrinho();
 }
+
+
+// 
 
 function exibirCarrinho() {
   document.getElementById('carrinho').style.display = 'block';
